@@ -9,7 +9,7 @@ Product Module จัดทำโดย กลุ่ม **S.O.Pang**
 * การค้นหารายการสินค้า (Search)
 
 ## Product Database (Logical Design)
-![Product Database (Logical Design)](https://github.com/tanknk/E-CommerceSystem/blob/Product/assets/images/Product_db.png)
+![Product Database (Logical Design)](https://github.com/tanknk/E-CommerceSystem/blob/Product/assets/images/PRODUCT_DB.png)
 **รายละเอียด**
 1. รายการสินค้า มีการเก็บข้อมูลดังนี้
     * รหัสของรายการสินค้า (id)
