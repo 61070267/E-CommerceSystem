@@ -1,0 +1,157 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>02</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body style="font-family: 'Montserrat', sans-serif;">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="../index.html"><img
+                src="https://www.pngkit.com/png/full/31-316559_white-home-icon-no-background.png"
+                style="width:25; height:25; margin-left: 5px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div style="padding: 20;">
+        <div style="padding: 20;">
+            <h1>Edit Product</h1><br>
+            <form method="POST" action="">
+                <div class="form-group row">
+                    <label for="name" style="justify-content: center; align-self: center; font-weight: bold;"
+                        class="col-sm-2">Product Name:
+                    </label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="name" name="name"
+                            placeholder="Enter Your Product Name" style="font-size: 15;">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="description" style="font-weight: bold;" class="col-sm-2">Product Description:</label>
+                    <div class="col-sm-5">
+                        <textarea class="form-control" id="description" name="description"
+                            placeholder="Enter Your Product Description" rows="4" style="font-size: 15;"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="price" style="justify-content: center; align-self: center; font-weight: bold;"
+                        class="col-sm-2">Product
+                        Price:</label>
+                    <div class="col-sm-3">
+                        <input type="number" class="form-control" id="price" name="price"
+                            placeholder="Enter Your Product Price" min="0" style="font-size: 15;">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="amount" style="justify-content: center; align-self: center; font-weight: bold;"
+                        class="col-sm-2">Product
+                        Amount:</label>
+                    <div class="col-sm-3">
+                        <input type="number" class="form-control" id="amount" name="amount"
+                            placeholder="Enter Your Product Amount" min="1" style="font-size: 15;">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="weight" style="justify-content: center; align-self: center; font-weight: bold;"
+                        class="col-sm-2">Product
+                        Weight (kg):</label>
+                    <div class="col-sm-3">
+                        <input type="number" class="form-control" id="weight" name="weight"
+                            placeholder="Enter Your Product Weight (kg)" min="0" step="0.01" style="font-size: 15;">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="picture" style="justify-content: center; align-self: center; font-weight: bold;"
+                        class="col-sm-2">Product
+                        Picture:</label>
+                    <div class="col-sm-3">
+                        <input type="file" class="form-control-file" id="picture" name="picture"
+                            placeholder="Enter Your Product Picture" style="font-size: 15;">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="brand" style="justify-content: center; align-self: center; font-weight: bold;"
+                        class="col-sm-2">Product
+                        Brand:</label>
+                    <div class="col-sm-3">
+                        <select class="form-control" id="brand" name="brand_id" style="font-size: 15;">
+                            <option value="default">--- Please Select Brand ---</option>
+                            <option value=1>Huawei</option>
+                            <option value=2>Nintendo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="category" style="justify-content: center; align-self: center; font-weight: bold;"
+                        class="col-sm-2">Product
+                        Category:</label>
+                    <div class="col-sm-3">
+                        <select class="form-control" id="category" name="category_id" style="font-size: 15;">
+                            <option value="default">--- Please Select Category ---</option>
+                            <option value=1>LifeStyle</option>
+                            <option value=2>Gaming</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <input class="btn btn-primary" id="submit" type="submit" name="submit" value="Submit"
+                        onclick="on_submit()" style="margin-left: 15px;">
+                </div>
+            </form>
+        </div>
+        <script>
+            function getParameterByName(name, url = window.location.href) {
+                name = name.replace(/[\[\]]/g, '\\$&');
+                var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, ' '));
+            }
+
+            let requestURL = "../data/Products.json";
+            let request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == 200) {
+                    dataReportStatus(JSON.parse(request.responseText));
+                }
+            };
+            request.open("GET", requestURL, true);
+            request.send();
+            let product_id = getParameterByName("product_id")
+            
+            function dataReportStatus(data) {
+                document.getElementById("name").value = data[product_id - 1].name
+                document.getElementById("description").value = data[product_id - 1].description
+                document.getElementById("price").value = data[product_id - 1].price
+                document.getElementById("amount").value = data[product_id - 1].amount
+                document.getElementById("weight").value = data[product_id - 1].weight
+                document.getElementById("brand").value = data[product_id - 1].brand.id
+                document.getElementById("category").value = data[product_id - 1].category.id
+            }
+        </script>
+        </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

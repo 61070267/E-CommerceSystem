@@ -1,0 +1,128 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body style="font-family: 'Montserrat', sans-serif;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="../index.html"><img
+                src="https://www.pngkit.com/png/full/31-316559_white-home-icon-no-background.png"
+                style="width:25; height:25; margin-left: 5px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div style="padding: 20;">
+        <h3 id="product_name"></h3>
+        <div id="product" class="row" style="margin-top:50px;">
+            <div class="col-3">
+                <img width="300px" height="300px" src="" id="picture">
+            </div>
+            <div class="col-9">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 id="name">
+                            </h5><br>
+                            <h5 id="price"></h5><br>
+                            <button class="btn btn-outline-danger">
+                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-cart-plus"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                    <path fill-rule="evenodd"
+                                        d="M8.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 .5-.5z" />
+                                </svg>&nbsp;&nbsp;Add to cart
+                            </button>
+                            <button type="button" class="btn btn-warning"
+                                style="height:2.9em; color:white; margin-left: 10px;">Buy Product</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="margin-top:20px;">
+            <div class="card-body" style="font-weight: bold; font-size: 20px;">
+                SHOP DETAIL
+            </div>
+        </div>
+        <div class="card" style="margin-top:20px;">
+            <div class="card-body">
+                <b style="font-size:20px;">Product Detail</b><br>
+                <div class="row" style="margin-top:20px;">
+                    <div class="col-sm-1">
+                        <p>Category: </p>
+                    </div>
+                    <div class="col-sm-1">
+                        <p id="product_detail"></p>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:5px;">
+                    <div class="col-sm-1">
+                        <p>Amount: </p>
+                    </div>
+                    <div class="col-sm-1">
+                        <p id="product_amount"></p>
+                    </div>
+                </div>
+                <b style="font-size:20px; margin-top: 20px;">Product Description</b><br>
+                <p id="product_description" style="margin-top: 20px;"></p>
+            </div>
+        </div>
+        <div class="card" style="margin-top:20px;">
+            <div class="card-body" style="font-weight: bold; font-size: 20px;">
+                REVIEW
+            </div>
+        </div>
+        <script>
+            function getParameterByName(name, url = window.location.href) {
+                name = name.replace(/[\[\]]/g, '\\$&');
+                var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, ' '));
+            }
+
+            let requestURL = "../data/Products.json";
+            let request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == 200) {
+                    dataReportStatus(JSON.parse(request.responseText));
+                }
+            };
+            request.open("GET", requestURL, true);
+            request.send();
+            let product = document.getElementById("product")
+            let product_id = getParameterByName("product_id")
+            function dataReportStatus(data) {
+                for (var i = 0; i <= data.length + 1; i++) {
+                    console.log(product_id, data[i].id)
+                    if (product_id == data[i].id) {
+                        document.getElementById("product_name").innerHTML = "<b>" + data[i].name + "</b>";
+                        document.getElementById("name").innerHTML = "<b>" + data[i].name + "</b>";
+                        document.getElementById("picture").src = data[i].picture;
+                        document.getElementById("price").innerHTML = data[i].price + " THB";
+                        document.getElementById("product_detail").innerHTML = data[i].category.name;
+                        document.getElementById("product_amount").innerHTML = data[i].amount;
+                        document.getElementById("product_description").innerHTML = data[i].description;
+                        card.className = "card"
+                        cardBody.className = "card-body"
+                        card.appendChild(cardBody)
+                        product.appendChild(card)
+                    }
+                }
+            }
+        </script>
+    </div>
+
+</body>
+
+</html>

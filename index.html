@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>E-Commerce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>02</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body style="font-family: 'Montserrat', sans-serif;">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img
+                src="https://www.pngkit.com/png/full/31-316559_white-home-icon-no-background.png"
+                style="width:25; height:25; margin-left: 5px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <ul class="nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="src/product_list.html">
+                        <button class="btn btn-danger" style="font-size: 15px;">Your Product</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div style="padding: 20;">
+        <form class="form-inline" style="align-self: center; justify-content: center;">
+            <input class="form-control form-control mr-2 w-50" type="text" placeholder="Search" aria-label="Search">
+            <button type="submit" class="btn btn-primary" style="height:38px;"><i class="fa fa-search"
+                    aria-hidden="true"></i></button>
+        </form>
+    </div>
+    <div style="padding: 20;">
+        <h3>Product List</h3>
+        <div id="product" class="row">
+            <script>
+                let requestURL = "data/Products.json";
+                let request = new XMLHttpRequest();
+                request.onreadystatechange = function () {
+                    if (request.readyState == 4 && request.status == 200) {
+                        dataReportStatus(JSON.parse(request.responseText));
+                    }
+                };
+                request.open("GET", requestURL, true);
+                request.send();
+                let product = document.getElementById("product")
+                function dataReportStatus(data) {
+                    for (var i = 0; i < data.length; i++) {
+                        let a = document.createElement("a")
+                        let card = document.createElement("div")
+                        let img = document.createElement("img")
+                        let p = document.createElement("p")
+                        a.className = "nav-link"
+                        a.href = "src/detail.html?product_id=" + data[i].id
+                        card.className = "card"
+                        card.style = "width: 18rem; margin-top:20px;"
+                        img.className = "card-img-top"
+                        img.style = "width:17rem; height: 15rem;"
+                        p.className = "card-body"
+                        p.innerHTML = "<b>" + data[i].name + "</b><br>" + data[i].price + " THB"
+                        img.src = data[i].picture
+                        card.appendChild(img)
+                        card.appendChild(p)
+                        a.appendChild(card)
+                        product.appendChild(a)
+                    }
+                }
+            </script>
+        </div>
+    </div>
+
+</body>
+
+</html>
