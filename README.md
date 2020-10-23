@@ -8,6 +8,10 @@ Product Module จัดทำโดย กลุ่ม **S.O.Pang**
 4. นายชาญวิทย์ เศรษฐวงศ์สิน รหัสนักศึกษา 61070040
 5. นายนรรณจา โสวรรณ รหัสนักศึกษา 61070097
 
+## User Interface
+[https://tanknk.github.io/E-CommerceSystem/](https://tanknk.github.io/E-CommerceSystem/)<br><br>
+**หมายเหตุ:** 1. เนื่องจากยังไม่ได้ลงรายละเอียดในส่วนของการทำงาน จึงไม่สามารถทำงานอื่นได้ (Search, Create, Update, Delete) นอกจากการแสดงรายละเอียด (Read)
+
 ## Product Services
 * การสร้างรายการสินค้าใหม่ (Create)
 * การดูรายละเอียดของรายการสินค้า (Read)
