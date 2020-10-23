@@ -8,7 +8,7 @@ Product Module จัดทำโดย กลุ่ม **S.O.Pang**
 4. นายชาญวิทย์ เศรษฐวงศ์สิน รหัสนักศึกษา 61070040
 5. นายนรรณจา โสวรรณ รหัสนักศึกษา 61070097
 
-**มีคำถามติดต่อทาง ![Facebook](https://www.facebook.com/tan.kositsakul/) ไลน์ถ้าไม่ตอบไม่ว่ากันนะฮะ**
+**มีคำถามติดต่อทาง [Facebook](https://www.facebook.com/tan.kositsakul/) ไลน์ถ้าไม่ตอบไม่ว่ากันนะฮะ**
 
 ## User Interface
 [https://tanknk.github.io/E-CommerceSystem/](https://tanknk.github.io/E-CommerceSystem/)<br><br>
